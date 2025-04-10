@@ -31,3 +31,25 @@ for f in funciones:
     print()
     for N in [1000, 10000, 100000, 1000000]:
         print(f"iters: {N}, Integral entre {funciones[f][1]} y {funciones[f][2]} de {f} ~ {monteCarloIntegral(funciones[f][0], funciones[f][1], funciones[f][2], N)}")
+
+
+print()
+print("*"*10 + " Ejercicio 5e " + "*"*10)
+
+def monteCarloDoubleIntegral(fun, iters):
+
+    value = 0
+
+    for _ in range(iters):
+        U = uniform()
+        U2 = uniform()
+
+        value += fun(U, U2)
+    
+    return value/iters
+
+f_e = lambda x, y : exp((x+y)**2)
+
+for N in [1000, 10000, 100000, 1000000]:
+    print(f"iters: {N}, Integral doble entre 0 y 1 de e^((x+y)^2) ~ {monteCarloDoubleIntegral(f_e, N)}")
+
