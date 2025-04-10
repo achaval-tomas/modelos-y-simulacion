@@ -25,5 +25,22 @@ for n in [100, 1000, 10000, 100000, 1000000]:
     print(f"n = {n} -> E[N] ~ {res}")
 
 
+print()
+print("*"*10 + " Ejercicio 8b " + "*"*10)
+
+def probSim(iters):
+    a = [0 for _ in range(7)]
+
+    for _ in range(iters):
+        val = getN()
+        if 0 <= val < 7:
+            a[val] += 1
+
+    return [n/iters for n in a]
+
+values = probSim(1000000)
+
+for i in range(len(values)):
+    print(f"P(N = {i}) ~ {values[i]}")
 
 
