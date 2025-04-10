@@ -26,24 +26,31 @@ print(f"Valor obtenido con N=1000 -> {waitLines(0.4, 3, 0.32, 4, 0.28, 5, 4, 100
 print()
 print("*"*10 + " Ejercicio 4b " + "*"*10)
 
-def condWait(wait, e1, e2, e3, Nsim):
+def condWait(wait, e1, p1, e2, p2, e3, p3, Nsim):
 
-    c1, c2, c3 = 0, 0, 0
+    lines = [0,0,0]
+    time, line = 0, 0
     for _ in range(Nsim):
-        a = exponential(e1)
-        b = exponential(e2)
-        c = exponential(e3)
+        U = uniform()
 
-        if a > wait:
-            c1 += 1
-        if b > wait:
-            c2 += 1
-        if c > wait:
-            c3 += 1
+        if U <= p1:
+            time = exponential(e1)
+            line = 0
+        elif U <= p1+p2:
+            time = exponential(e2)
+            line = 1
+        else:
+            time = exponential(e3)
+            line = 2
+
+        if time > wait:
+            lines[line] += 1
     
-    return c1/Nsim, c2/Nsim, c3/Nsim
+    waited_overtime = sum(lines)
 
-c1, c2, c3 = condWait(4, 3, 4, 5, 1000)
+    return lines[0]/waited_overtime, lines[1]/waited_overtime, lines[2]/waited_overtime
+
+c1, c2, c3 = condWait(4, 3, 0.4, 4, 0.32, 5, 0.28, 1000)
 print(f"Probabilidad caja 1 dado que se esperaron 4 min -> {c1}")
 print(f"Probabilidad caja 2 dado que se esperaron 4 min -> {c2}")
 print(f"Probabilidad caja 3 dado que se esperaron 4 min -> {c3}")
