@@ -91,4 +91,4 @@ print(f"Valor obtenido con a=2^16+3, M = 2^31 -> {multGenPointsInSphere(a, M, M/
 
 a = 7**5
 M = 2**31 - 1
-print(f"Valor obtenido con a=2^16+3, M = 2^31 -> {multGenPointsInSphere(a, M, M/10, (M/2, M/2, M/2), Nsim)}")
+print(f"Valor obtenido con a=7^5, M = 2^31-1 -> {multGenPointsInSphere(a, M, M/10, (M/2, M/2, M/2), Nsim)}")
