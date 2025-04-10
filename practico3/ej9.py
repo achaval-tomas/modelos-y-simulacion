@@ -5,10 +5,11 @@ def throwDice():
     return 1 + floor(uniform()*6)
 
 def simDice(iters):
-    win_count = 0
+    score, win_count = 0, 0
 
     for _ in range(iters):
         U = throwDice()
+
         if U <= 4:
             score = throwDice() + throwDice()
         else:
@@ -21,4 +22,5 @@ def simDice(iters):
 
 print("*"*10 + " Ejercicio 9 " + "*"*10)
 
-print(f"Probabilidad de ganar ~ {simDice(1000000)}")
+for n in [1000, 10000, 100000, 1000000]:
+    print(f"Iteraciones: {n} -> Probabilidad de ganar ~ {simDice(n)}")

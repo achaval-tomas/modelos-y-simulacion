@@ -1,0 +1,113 @@
+
+********** Ejercicio 1a **********
+
+seed: 3009, period: 4
+seed: 7600, period: 1
+seed: 1234, period: 1
+seed: 4321, period: 4
+
+********** Ejercicio 1b **********
+
+Periodo maximo de 5*y+c mod (32), requiere c=3 y es: 32
+Periodo maximo de a*y mod (31), requiere a=3 raiz primitiva de 31 y es: 30
+Generador 5*y+3 mod 32 + 3*y mod 31 tiene periodo: 480
+
+********** Ejercicio 1d **********
+
+Valor esperado: 3.141592653589793
+Valor obtenido con a=2^16+3, M = 2^31 -> 2.816099996065954
+Valor obtenido con a=7^5, M = 2^31-1 -> 3.1378499956164743
+
+********** Ejercicio 2b **********
+Estimación de la probabilidad de ganar con N=100 -> 0.7
+Estimación de la probabilidad de ganar con N=1000 -> 0.691
+Estimación de la probabilidad de ganar con N=10000 -> 0.6639
+Estimación de la probabilidad de ganar con N=100000 -> 0.66695
+Estimación de la probabilidad de ganar con N=1000000 -> 0.666187
+
+********** Ejercicio 3b **********
+Estimación de la probabilidad de ganar con N=100 -> 0.9
+Estimación de la probabilidad de ganar con N=1000 -> 0.899
+Estimación de la probabilidad de ganar con N=10000 -> 0.8863
+Estimación de la probabilidad de ganar con N=100000 -> 0.88757
+Estimación de la probabilidad de ganar con N=1000000 -> 0.888431
+
+********** Ejercicio 4a **********
+Valor obtenido con N=1000 -> 0.654
+
+********** Ejercicio 4b **********
+Probabilidad caja 1 dado que se esperaron 4 min -> 0.345821325648415
+Probabilidad caja 2 dado que se esperaron 4 min -> 0.30835734870317005
+Probabilidad caja 3 dado que se esperaron 4 min -> 0.345821325648415
+
+********** Ejercicio 5 a, b, c y d **********
+
+iters: 1000, Integral entre 0 y 1 de (1-x^2)^(3/2) ~ 0.5745096201834238
+iters: 10000, Integral entre 0 y 1 de (1-x^2)^(3/2) ~ 0.5887734834510524
+iters: 100000, Integral entre 0 y 1 de (1-x^2)^(3/2) ~ 0.5885002800042816
+iters: 1000000, Integral entre 0 y 1 de (1-x^2)^(3/2) ~ 0.5889950184663675
+
+iters: 1000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.49365430312149555
+iters: 10000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4902736674822646
+iters: 100000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4907181655292718
+iters: 1000000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4904487723583535
+
+iters: 1000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5117928926154238
+iters: 10000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5037399502622271
+iters: 100000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5003082317562244
+iters: 1000000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.49977647820427556
+
+iters: 1000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7301915307912568
+iters: 10000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.780442018299279
+iters: 100000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7682163055704132
+iters: 1000000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7707883542847414
+
+********** Ejercicio 5e **********
+iters: 1000, Integral doble entre 0 y 1 de e^((x+y)^2) ~ 4.8044029296232065
+iters: 10000, Integral doble entre 0 y 1 de e^((x+y)^2) ~ 4.978798731640698
+iters: 100000, Integral doble entre 0 y 1 de e^((x+y)^2) ~ 4.909652936672533
+iters: 1000000, Integral doble entre 0 y 1 de e^((x+y)^2) ~ 4.903393566093491
+
+********** Ejercicio 5f **********
+iters: 1000, Integral doble en (0, inf), (0,x) de e^-(x+y) dy dx ~ 0.5154005968168073
+iters: 10000, Integral doble en (0, inf), (0,x) de e^-(x+y) dy dx ~ 0.514225677113734
+iters: 100000, Integral doble en (0, inf), (0,x) de e^-(x+y) dy dx ~ 0.4983989371626955
+iters: 1000000, Integral doble en (0, inf), (0,x) de e^-(x+y) dy dx ~ 0.5003852192024172
+
+********** Ejercicio 6 **********
+
+pi = 3.141592653589793
+iters: 1000, pi ~ 3.164
+iters: 10000, pi ~ 3.1132
+iters: 100000, pi ~ 3.13712
+iters: 1000000, pi ~ 3.140428
+
+********** Ejercicio 7 **********
+n = 100 -> E[N] ~ 2.73
+n = 1000 -> E[N] ~ 2.78
+n = 10000 -> E[N] ~ 2.6961
+n = 100000 -> E[N] ~ 2.71668
+n = 1000000 -> E[N] ~ 2.717568
+
+********** Ejercicio 8a **********
+n = 100 -> E[N] ~ 4.06
+n = 1000 -> E[N] ~ 4.058
+n = 10000 -> E[N] ~ 4.0153
+n = 100000 -> E[N] ~ 3.99891
+n = 1000000 -> E[N] ~ 3.998278
+
+********** Ejercicio 8b **********
+P(N = 0) ~ 0.0
+P(N = 1) ~ 0.050109
+P(N = 2) ~ 0.149008
+P(N = 3) ~ 0.223554
+P(N = 4) ~ 0.224054
+P(N = 5) ~ 0.168165
+P(N = 6) ~ 0.101004
+
+********** Ejercicio 9 **********
+Iteraciones: 1000 -> Probabilidad de ganar ~ 0.578
+Iteraciones: 10000 -> Probabilidad de ganar ~ 0.5463
+Iteraciones: 100000 -> Probabilidad de ganar ~ 0.55703
+Iteraciones: 1000000 -> Probabilidad de ganar ~ 0.555312
+
