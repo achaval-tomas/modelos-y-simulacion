@@ -1,6 +1,6 @@
 from numpy.random import uniform
 
-print("*"*10 + "Ejercicio 3b" + "*"*10)
+print("*"*10 + " Ejercicio 3b " + "*"*10)
 
 def gameSim(Nsim):
     win_count = 0
