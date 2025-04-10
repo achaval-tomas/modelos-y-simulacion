@@ -61,3 +61,29 @@ plot(y, "yplot")
 plot(z, "zplot")
 
 
+printEx("d")
+from math import pi
+
+def multGenPointsInSphere(a, M, radius, c, Nsim):
+    in_sphere = 0
+    u = 1
+    for _ in range(Nsim):
+        u1 = (a*u) % M
+        u2 = (a*u1) % M
+        u3 = (a*u2) % M
+
+        if ((u1 - c[0])**2 + (u2 - c[1])**2 + (u3 - c[2])**2) <= radius**2:
+            in_sphere += 1
+
+        u = u3
+    return ((in_sphere/Nsim) * (M-1)**3) / ((4/3) * (M**3)/1000)
+
+Nsim = 10000000
+a = 2**16+3
+M = 2**31
+print(f"Valor esperado: {pi}")
+print(f"Valor obtenido con a=2^16+3, M = 2^31 -> {multGenPointsInSphere(a, M, M/10, (M/2, M/2, M/2), Nsim)}")
+
+a = 7**5
+M = 2**31 - 1
+print(f"Valor obtenido con a=2^16+3, M = 2^31 -> {multGenPointsInSphere(a, M, M/10, (M/2, M/2, M/2), Nsim)}")
