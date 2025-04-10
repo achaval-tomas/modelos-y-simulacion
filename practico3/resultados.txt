@@ -33,12 +33,12 @@ Estimación de la probabilidad de ganar con N=100000 -> 0.88757
 Estimación de la probabilidad de ganar con N=1000000 -> 0.888431
 
 ********** Ejercicio 4a **********
-Valor obtenido con N=1000 -> 0.654
+Valor obtenido con N=1000000 -> 0.651565
 
 ********** Ejercicio 4b **********
-Probabilidad caja 1 dado que se esperaron 4 min -> 0.345821325648415
-Probabilidad caja 2 dado que se esperaron 4 min -> 0.30835734870317005
-Probabilidad caja 3 dado que se esperaron 4 min -> 0.345821325648415
+Probabilidad caja 1 dado que se esperaron 4 min -> 0.3020062086697796
+Probabilidad caja 2 dado que se esperaron 4 min -> 0.33664691701995314
+Probabilidad caja 3 dado que se esperaron 4 min -> 0.36134687431026724
 
 ********** Ejercicio 5 a, b, c y d **********
 
