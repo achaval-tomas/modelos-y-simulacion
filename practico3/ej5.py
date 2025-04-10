@@ -53,3 +53,8 @@ f_e = lambda x, y : exp((x+y)**2)
 for N in [1000, 10000, 100000, 1000000]:
     print(f"iters: {N}, Integral doble entre 0 y 1 de e^((x+y)^2) ~ {monteCarloDoubleIntegral(f_e, N)}")
 
+print()
+print("*"*10 + " Ejercicio 5f " + "*"*10)
+f_f = lambda x, y : (1/x**2) * (1/y**2) * exp(-((1/x - 1) + (1/y - 1))) * (1 if (1/y - 1)<(1/x - 1) else 0)
+for N in [1000, 10000, 100000, 1000000]:
+    print(f"iters: {N}, Integral doble en (0, inf), (0,x) de e^-(x+y) dy dx ~ {monteCarloDoubleIntegral(f_f, N)}")
