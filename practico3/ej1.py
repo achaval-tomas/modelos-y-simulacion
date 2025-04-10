@@ -27,15 +27,20 @@ print(f"Periodo maximo de 5*y+c mod (32), requiere c=3 y es: {mixedGen(5, 3, 32,
 print(f"Periodo maximo de a*y mod (31), requiere a=3 raiz primitiva de 31 y es: {mixedGen(3, 0, 31, 1)[1]}")
 
 
-def mixedGenSum(a, c, M, a2, c2, M2, seed):
-    seen = [seed]
-    u = (a*seed + c) % M + (a2*seed + c2) % M2
-    while u not in seen:
-        seen.append(u)
-        u = (a*u + c) % M + (a2*u + c2) % M2
-    return seen, len(seen) - seen.index(u)
+def mixedGenSum(a, c, M, a2, c2, M2, seed1, seed2):
+    seen = [(seed1, seed2)]
+    v1 = (a*seed1 + c) % M
+    v2 = (a2*seed2 + c2) % M2
 
-print(f"Generador 5*y+3 mod 32 + 3*y mod 31 tiene periodo: {mixedGenSum(5, 3, 32, 3, 0, 31, 0)[1]}")
+    while (v1, v2) not in seen:
+        seen.append((v1, v2))
+        
+        v1 = (a*v1 + c) % M
+        v2 = (a2*v2 + c2) % M2
+
+    return [a+b for (a,b) in seen], len(seen) - seen.index((v1, v2))
+
+print(f"Generador 5*y+3 mod 32 + 3*y mod 31 tiene periodo: {mixedGenSum(5, 3, 32, 3, 0, 31, 1, 2)[1]}")
 
 import matplotlib.pyplot as plt
 
@@ -54,7 +59,7 @@ def plot(a, name):
 
 x, _ = mixedGen(5, 3, 32, 0)
 y, _ = mixedGen(3, 0, 31, 1)
-z, _ = mixedGenSum(5, 3, 32, 3, 0, 31, 0)
+z, _ = mixedGenSum(5, 3, 32, 3, 0, 31, 0, 1)
 
 plot(x, "xplot")
 plot(y, "yplot")
