@@ -10,7 +10,7 @@ def getN():
         prod *= uniform()
         count += 1
 
-    return count
+    return count - 1
 
 def sim(iters):
     total = 0
