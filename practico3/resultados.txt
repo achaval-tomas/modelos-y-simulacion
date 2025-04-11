@@ -52,15 +52,15 @@ iters: 10000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4902736674822646
 iters: 100000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4907181655292718
 iters: 1000000, Integral entre 2 y 3 de x/(x^2-1) ~ 0.4904487723583535
 
-iters: 1000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5117928926154238
-iters: 10000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5037399502622271
-iters: 100000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5003082317562244
-iters: 1000000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.49977647820427556
+iters: 1000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.4943752299948625
+iters: 10000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.49875152639153747
+iters: 100000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.5003436918501398
+iters: 1000000, Integral entre 0 y 1 de h(x) = (1/x^2) * ((1/x - 1)*(1 + (1/x - 1)^2)^(-2)), (original x*(1+x^2)^-2 en (0, inf)) ~ 0.500446334755204
 
-iters: 1000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7301915307912568
-iters: 10000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.780442018299279
-iters: 100000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7682163055704132
-iters: 1000000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7707883542847414
+iters: 1000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7959694999599487
+iters: 10000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.786526427738164
+iters: 100000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7728390545557753
+iters: 1000000, Integral entre 0 y 1 de h(x) = 2 * (1/x^2) * e^-((1/x - 1)^2) (original e^(-x^2) en (-inf, inf)) ~ 1.7749032547888395
 
 ********** Ejercicio 5e **********
 iters: 1000, Integral doble entre 0 y 1 de e^((x+y)^2) ~ 4.8044029296232065
