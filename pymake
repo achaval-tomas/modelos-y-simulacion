@@ -1,0 +1,1 @@
+sed -i '1i #!/bin/python3' $@; chmod +x $@
