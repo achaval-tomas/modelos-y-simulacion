@@ -37,6 +37,6 @@ def pares(N):
 
     return impares/N
 
-print("\n***** Ejercicio 2 *****")
+print("\n***** Ejercicio 2b *****")
 for n in [100, 1000, 10000]:
     print(f"N° de sim = {n}, p ~ {pares(n)}")
