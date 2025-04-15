@@ -1,3 +1,4 @@
+# Tomás Achával Berzero, Parcial 1 MyS 2025, FaMAF.
 from numpy.random import uniform
 from math import sqrt
 
