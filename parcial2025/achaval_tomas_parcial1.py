@@ -23,6 +23,8 @@ for n in [1000, 10000, 100000]:
 def juego():
     N, sum = 0, 0
 
+    # suma acumulada de realizaciones de v.a.i. uniformes en (0,1)
+    # hasta que el valor total supere 1 (acierto)
     while sum < 1:
         sum += uniform()
         N += 1
@@ -32,6 +34,8 @@ def juego():
 def pares(N):
     impares = 0
 
+    # simulación de jugar N veces, contando la cantidad de veces
+    # en las que el resultado es impar
     for _ in range(N):
         impares += (juego() % 2) # = 1 si juego() es impar, = 0 c.c.
 
