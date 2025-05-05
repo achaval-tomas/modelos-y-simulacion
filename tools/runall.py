@@ -1,10 +1,13 @@
 #!/bin/python3
 import subprocess
+import sys
 
-with open("resultados.txt", "w") as f:
+N = int(sys.argv[1])
+
+with open(f"../practico{N}/resultados.txt", "w") as f:
     for i in range(1, 10):
         output = subprocess.run(
-            ["python3", f"ej{i}.py"],
+            ["python3", f"../practico{N}/ej{i}.py"],
             stdout=subprocess.PIPE,
         ).stdout.decode('utf-8')
 
