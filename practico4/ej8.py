@@ -50,11 +50,9 @@ for (name, sim) in funciones.items():
     start = time()
     values = [sim(10, 0.7) for _ in range(n_sim)]
     print(f"took {time() - start:.6f}s")
-
-    for v in set(values):
-        print(f"P(X = {v}) ~ {values.count(v)/n_sim}")
+    
+    print(f"P(X > 2) ~ {sum([v > 2 for v in values])/n_sim}")
 
 print("\n***** Valores Exactos *****")
 exact_vals = exactVals(10, 0.7)
-for i in range(len(exact_vals)):
-    print(f"P(X = {i}) = {exact_vals[i]:.6f}")
+print(f"P(X > 2) = {sum(exact_vals[3:]):.5f}")
