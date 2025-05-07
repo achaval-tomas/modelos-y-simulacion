@@ -23,10 +23,9 @@ funciones = {
 }
 
 print("*"*10 + " 5 " + "*"*10)
-print()
 
 for key, fun in funciones.items():
-    print(f"***** {key} *****")
+    print(f"\n***** {key} *****")
     values = []
     start = time_ns()
 
