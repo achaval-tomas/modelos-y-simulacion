@@ -42,6 +42,7 @@ funciones = {
     "Transformada Inversa Optimizada": poissonTransInvOptimized,
 }
 
+print("*"*10 + " 7 " + "*"*10)
 n_sim = 1000
 for (name, sim) in funciones.items():
     print(f"\n***** {name} *****")
