@@ -1,5 +1,5 @@
 from math import exp, factorial, floor
-from time import time_ns
+from time import time
 from numpy.random import uniform, poisson
 
 def transInv(k, l):
@@ -14,13 +14,22 @@ def transInv(k, l):
     
     return i
 
-
-def rejection(k, l):
-    c = 1 / (exp(-l) * sum([(l**j) / factorial(j) for j in range(k)]))
+def rejectionRobo(k, l):
     while True:
         Y = poisson(l)
+        if Y <= k:
+            return Y
+
+l = 0.7
+k = 10
+den = sum([l**j * exp(-l) / factorial(j) for j in range(k)])
+f = [(l**i) * exp(-l) / (factorial(i) * den) for i in range(11)]
+max_f = max(f)
+def rejection(k, l):
+    while True:
+        Y = floor(uniform() * (k+1))
         U = uniform()
-        if U <= c:
+        if U <= (f[Y] / max_f):
             return Y
         
 def exactVals(k, l):
@@ -34,13 +43,13 @@ funciones = {
 }
 
 print("*"*10 + " 8 " + "*"*10)
-n_sim = 1000000
+n_sim = 100000
 for (name, sim) in funciones.items():
     print(f"\n***** {name} *****")
     
-    start = time_ns()
+    start = time()
     values = [sim(10, 0.7) for _ in range(n_sim)]
-    print(f"took {time_ns() - start}ns")
+    print(f"took {time() - start:.6f}s")
 
     for v in set(values):
         print(f"P(X = {v}) ~ {values.count(v)/n_sim}")
