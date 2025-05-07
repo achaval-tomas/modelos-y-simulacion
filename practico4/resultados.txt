@@ -185,3 +185,21 @@ P(X = 6) = 0.000081
 P(X = 7) = 0.000008
 P(X = 8) = 0.000001
 P(X = 9) = 0.000000
+
+********** 9 **********
+
+***** Transformada Inversa *****
+took 0.011677s
+X ~ Geom(0.2), E(X) ~ 4.9958
+
+***** Simulación de ensayos *****
+took 0.045527s
+X ~ Geom(0.2), E(X) ~ 4.9995
+
+***** Transformada Inversa *****
+took 0.010091s
+X ~ Geom(0.8), E(X) ~ 1.2478
+
+***** Simulación de ensayos *****
+took 0.011909s
+X ~ Geom(0.8), E(X) ~ 1.2536
