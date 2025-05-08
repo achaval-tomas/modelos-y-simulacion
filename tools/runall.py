@@ -5,14 +5,14 @@ import sys
 N = int(sys.argv[1])
 
 with open(f"../practico{N}/resultados.txt", "w") as f:
-    try:
-        for i in range(1, 20):
+    for i in range(1, 20):
+        try:
             output = subprocess.run(
                 ["python3", f"../practico{N}/ej{i}.py"],
                 stdout=subprocess.PIPE,
             ).stdout.decode('utf-8')
 
             f.write(output + "\n")
-    except FileNotFoundError:
-        pass
+        except FileNotFoundError:
+            pass
 
