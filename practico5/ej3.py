@@ -6,7 +6,12 @@ def exp(l):
     return - l * log (1 - uniform())
 
 def sumVars(generators, probs):
-    return sum(generators[i]()*probs[i] for i in range(len(probs)))
+    U = uniform()
+    i, total = 0, probs[0]
+    while U >= total:
+        i += 1
+        total += probs[i]
+    return generators[i]()
 
 generators = [
     lambda : exp(3),
@@ -22,4 +27,4 @@ probs = [
 print("*"*10 + " 3 " + "*"*10)
 N = 10000
 E = sum(sumVars(generators, probs) for _ in range(N))/N
-print(f"E(X) ~ {E}, Exacta = {3*0.5 + 5*0.3 + 7*0.2}")
+print(f"E(X) ~ {E:.5f}, Exacta = {3*0.5 + 5*0.3 + 7*0.2}")
