@@ -31,5 +31,5 @@ for (name, sim) in funciones.items():
     print(f"took {(time() - start):.5f}s")
 
     print(f"E(X) ~ {sum(values)/n_sim:.5f}, real = 1")
-    print(f"P(X > 1.75) ~ {sum(v > 1.5 for v in values)/n_sim}"
+    print(f"P(X > 1.5) ~ {sum(v > 1.5 for v in values)/n_sim}"
           f", real = 0.125")
