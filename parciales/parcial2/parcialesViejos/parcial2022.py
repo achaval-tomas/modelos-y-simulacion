@@ -2,18 +2,21 @@ from numpy.random import uniform
 from math import log
 
 print("Ejercicio 1")
-def urnaX(p):
-    urna = []
-    for i in range(len(p)):
-        urna += [i for _ in range(int(p[i]*100))]
-    indice = int(uniform() * len(urna))
+probs = [0.32, 0.21, 0.33, 0.14]
+
+tam_urna = 100
+urna = []
+for i in range(len(probs)):
+    urna += [i for _ in range(int(probs[i]*tam_urna))]
+
+def urnaX():
+    indice = int(uniform() * tam_urna)
     return urna[indice]
 
-probs = [0.32, 0.21, 0.33, 0.14]
 values = [0, 0, 0, 0]
 N = 100000
 for _ in range(N):
-    values[urnaX(probs)] += 1
+    values[urnaX()] += 1
 
 for i in range(len(values)):
     print(f"P(X = {i}) ~ {values[i]/N}")
