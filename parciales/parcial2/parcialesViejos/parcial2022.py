@@ -63,7 +63,7 @@ total = sum(simExp(p) == 4 for _ in range(N))
 print(f"Con simulación: P(X = 4) ~ {total/N}, real = {(2**3 + 2) / 3**4:.5f}")
 
 def simGeom(p):
-    i = 0
+    i = 1
     while uniform() > p:
         i += 1
     return i
