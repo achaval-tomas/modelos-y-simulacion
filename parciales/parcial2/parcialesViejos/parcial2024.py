@@ -1,4 +1,4 @@
-from math import log, pi, sqrt
+from math import cbrt, log, pi, sqrt
 from numpy.random import uniform
 
 
@@ -6,7 +6,7 @@ print("---------- Ejercicio 1 ----------")
 def algo_x(p):
     while True:
         Y = int(uniform() * 4)
-        if uniform() < p[Y]:
+        if uniform() < p[Y]/0.35:
             return Y
         
 N = 10000
@@ -20,7 +20,7 @@ print("---------- Ejercicio 2 ----------")
 def transf_inv():
     U = uniform()
     if U < 2/3:
-        return 1.5 * sqrt(1.5 * U**3)
+        return cbrt((1.5*U)**2)
     else:
         return 3*U - 1
 
