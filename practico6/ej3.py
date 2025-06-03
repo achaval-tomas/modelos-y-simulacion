@@ -12,7 +12,7 @@ z = norm.ppf(1 - 0.025)
 def montecarlo(f, Niter):
     media = f(uniform())
     SS, n = 0, 1
-    while (n <= 100 or z * sqrt(SS/n) >= 0.001)*(not Niter) or (n <= Niter):
+    while (n < 100 or z * sqrt(SS/n) >= 0.001)*(not Niter) or (n <= Niter):
         n += 1
         media_ant = media
         media = media_ant + (f(uniform()) - media_ant) / n
