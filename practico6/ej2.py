@@ -8,7 +8,7 @@ f_ii = lambda U : (2 / U**2) * (1/U - 1)**2 * exp(-(1/U - 1)**2)
 def montecarlo(f):
     media = f(uniform())
     SS, n = 0, 1
-    while n < 100 or SS >= n * 0.01:
+    while n < 100 or sqrt(SS/n) >= 0.01:
         n += 1
         media_ant = media
         media = media_ant + (f(uniform()) - media_ant) / n

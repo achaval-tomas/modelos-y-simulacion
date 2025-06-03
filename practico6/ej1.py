@@ -13,7 +13,7 @@ def normalRazon():
 def simN():
     media = normalRazon()
     SS, n = 0, 1
-    while n < 100 or SS >= n * 0.01:
+    while n < 100 or sqrt(SS/n) >= 0.1:
         n += 1
         media_ant = media
         media = media_ant + (normalRazon() - media_ant) / n
