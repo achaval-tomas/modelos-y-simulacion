@@ -27,5 +27,5 @@ print("\n***** Ejercicio 4 a y b *****")
 print(f"N = {n}, e = {media}, varianza muestral = {varianza}")
 
 n, media, varianza = sim(0)
-print("\n***** Ejercicio 4 a y b *****")
+print("\n***** Ejercicio 4 c *****")
 print(f"N = {n}, e = {media}, varianza muestral = {varianza}")
