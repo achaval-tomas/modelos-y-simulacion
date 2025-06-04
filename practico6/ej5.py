@@ -23,15 +23,15 @@ def sim(checker):
     return n, media
 
 
-# checker = desviación estandar >= 0.01
-n, val = sim(lambda n, SS : sqrt(SS/n) >= 0.01)
+# stop when varianza <= 0.01
+n, val = sim(lambda n, SS : SS/n >= 0.01)
 
 print("\n***** Ej 5c *****")
 print(f"Datos generados : {n}"
       f"\ne ~ {val:5f}"
       f"\nReal: {e:5f}")
 
-# checker = longitud de IC95% <= 0.1
+# stop when longitud de IC95% <= 0.1
 z = norm.ppf(1 - 0.025)
 n, val = sim(lambda n, SS : z * sqrt(SS/n) >= 0.05)
 
