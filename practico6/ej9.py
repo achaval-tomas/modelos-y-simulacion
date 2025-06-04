@@ -47,3 +47,12 @@ values = [simServer(100) for _ in range(N)]
 print("***** Ejercicio 9 *****")
 print(f"Tiempo esperado de servidor sin funcionar: {sum(values)/N}")
 
+import matplotlib.pyplot as plt
+
+plt.hist(values, bins=30, edgecolor='black')
+
+plt.xlabel('Horas sin funcionar')
+plt.ylabel('Frecuencia')
+plt.title('Histograma de horas sin funcionar cada 100 del servidor')
+
+plt.savefig("ej9.svg")
