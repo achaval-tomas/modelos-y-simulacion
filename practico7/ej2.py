@@ -1,9 +1,11 @@
 from numpy.random import uniform
+from scipy.stats import chi2
 
 n = 1000
 k = 6
 p = [1/6 for _ in range(k)]
 t = 2.18
+grado = 5
 N = 10000
 
 def estadistico(N):
@@ -38,3 +40,4 @@ def sim():
 
 print("***** Ejercicio 2 *****")
 print(f"p-valor ~ {sim()}")
+print(f"real ~ {1 - chi2.cdf(t, grado):5f}")
