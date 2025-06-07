@@ -1,9 +1,9 @@
 from numpy.random import uniform
 
-n = 564
-k = 3
-p = [0.25, 0.5, 0.25]
-t = 0.8617
+n = 1000
+k = 6
+p = [1/6 for _ in range(k)]
+t = 2.18
 N = 10000
 
 def estadistico(N):
@@ -36,5 +36,5 @@ def sim():
     p_valor = sum(estadistico(F) > t for F in frecuencias)/N
     return p_valor
 
-print("***** Ejercicio 1 *****")
+print("***** Ejercicio 2 *****")
 print(f"p-valor ~ {sim()}")
