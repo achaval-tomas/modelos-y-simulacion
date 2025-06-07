@@ -1,33 +1,39 @@
 from numpy.random import uniform
 
+k = 3
 n = 564
+t = 0.8617
 p = [0.25, 0.5, 0.25]
+N = 10000
 
-def X():
+def estadistico(muestra):
+    return sum((muestra[i] - n*p[i])**2/(n*p[i]) for i in range(k))
+
+def Binomial(n,p):
+    c = p / (1 - p)
+    prob = (1 - p) ** n
+    F, i = prob, 0
     U = uniform()
-    return (
-        "rosa" if U < 0.5
-    else
-        "blanco" if U < 0.75
-    else
-        "rojo"
-    )
+    while U >= F:
+        prob *= c * (n-i) / (i+1)
+        F += prob
+        i += 1
+    return i
 
-def estadistico(N):
-    return sum((N[i] - n*p[i])**2/(n*p[i]) for i in range(3))
+def sim_frecuencias():
+    acum, p_acum = 0, 0
+    frecuencias = []
+    for i in range(k-1):
+        B = Binomial(n - acum, p[i] / (1 - p_acum))
+        p_acum += p[i]
+        acum += B
+        frecuencias.append(B)
+    frecuencias.append(n - acum)
+    return frecuencias
 
 def sim():
-    N = 10000
-    muestras = [[X() for _ in range(n)] for _ in range(N)]
-    frecuencias = [
-        [
-            m.count("blanco"),
-            m.count("rosa"),
-            m.count("rojo")
-        ]
-        for m in muestras
-    ]
-    p_valor = sum(estadistico(F) > 0.8617 for F in frecuencias)/N
+    frecuencias = [sim_frecuencias() for _ in range(N)]
+    p_valor = sum(estadistico(F) > t for F in frecuencias)/N
     return p_valor
 
 print("***** Ejercicio 1 *****")
