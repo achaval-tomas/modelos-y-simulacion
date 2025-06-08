@@ -49,6 +49,6 @@ def simExponenciales(Niter):
     return pvalor/Niter
 
 Nsim = 10000
-print("***** Ejercicio 4 *****")
+print("***** Ejercicio 9 *****")
 print(f"p-valor con uniformes ~ {simUniformes(Nsim)}")
 print(f"p-valor con exponenciales ~ {simExponenciales(Nsim)}")
