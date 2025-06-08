@@ -26,10 +26,10 @@ p-valor ~ 0.78431
 ***** Ejercicio 8 *****
 Para 10000 simulaciones se obtuvieron los siguientes valores:
  n | estadístico | p-valor 
- 10 | 0.4096 | 0.05040
- 20 | 0.1746 | 0.53510
- 100 | 0.1535 | 0.01410
- 1000 | 0.0950 | 0.00000
+ 10 | 0.1877 | 0.81910
+ 20 | 0.1611 | 0.62200
+ 100 | 0.0924 | 0.33750
+ 1000 | 0.0730 | 0.00010
 
 ***** Ejercicio 9 *****
 p-valor con uniformes ~ 0.1826

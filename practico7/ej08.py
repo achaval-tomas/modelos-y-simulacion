@@ -2,6 +2,10 @@ import math
 import random
 from numpy.random import uniform
 
+# seedeo las muestras generadas por rt
+# y dejo sin seed las uniform() de numpy
+random.seed(123456789)
+
 def rt(df):
     x = random.gauss(0.0, 1.0)
     y = 2.0*random.gammavariate(0.5*df, 2.0)
