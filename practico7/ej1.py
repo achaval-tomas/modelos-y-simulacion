@@ -35,7 +35,7 @@ def sim_frecuencias():
 
 def sim():
     frecuencias = [sim_frecuencias() for _ in range(N)]
-    p_valor = sum(estadistico(F) > t for F in frecuencias)/N
+    p_valor = sum(estadistico(F) >= t for F in frecuencias)/N
     return p_valor
 
 print("***** Ejercicio 1 *****")
