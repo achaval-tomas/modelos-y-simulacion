@@ -1,43 +1,43 @@
 ***** Ejercicio 1 *****
-p-valor ~ 0.6595
+p-valor ~ 0.6649
 real ~ 0.649956
 
 ***** Ejercicio 2 *****
-p-valor ~ 0.8314
+p-valor ~ 0.8226
 real ~ 0.823720
 
 ***** Ejercicio 3 *****
-p-valor ~ 0.5258
+p-valor ~ 0.5329
 
 ***** Ejercicio 4 *****
-p-valor ~ 0.0292
+p-valor ~ 0.0277
 
 ***** Ejercicio 5 *****
-p-valor ~ 0.0001
+p-valor ~ 0.0
 real ~ 0.000034
 
 ***** Ejercicio 6 *****
-p-valor ~ 0.3665
+p-valor ~ 0.365
 real ~ 0.366051
 
 ***** Ejercicio 7 *****
-p-valor ~ 0.33673
+p-valor ~ 0.78431
 
 ***** Ejercicio 8 *****
 Para 10000 simulaciones se obtuvieron los siguientes valores:
  n | estadístico | p-valor 
- 10 | 0.1987 | 0.75030
- 20 | 0.1698 | 0.55650
- 100 | 0.1333 | 0.05390
- 1000 | 0.0854 | 0.00000
+ 10 | 0.4096 | 0.05040
+ 20 | 0.1746 | 0.53510
+ 100 | 0.1535 | 0.01410
+ 1000 | 0.0950 | 0.00000
 
 ***** Ejercicio 9 *****
-p-valor con uniformes ~ 0.1897
-p-valor con exponenciales ~ 0.0708
+p-valor con uniformes ~ 0.1826
+p-valor con exponenciales ~ 0.0698
 
 ***** Ejercicio 10 *****
-p-valor con uniformes ~ 0.0117
-p-valor con normales ~ 0.0108
+p-valor con uniformes ~ 0.0102
+p-valor con normales ~ 0.0091
 
 
 
