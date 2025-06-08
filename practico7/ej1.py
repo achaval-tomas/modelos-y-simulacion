@@ -1,5 +1,4 @@
-from numpy.random import uniform
-from scipy.stats import chi2
+from scipy.stats import chi2, binom
 
 n = 564
 k = 3
@@ -11,22 +10,11 @@ N = 10000
 def estadistico(N):
     return sum((N[i] - n*p[i])**2/(n*p[i]) for i in range(k))
 
-def Binomial(n,p):
-    c = p / (1 - p)
-    prob = (1 - p) ** n
-    F, i = prob, 0
-    U = uniform()
-    while U >= F:
-        prob *= c * (n-i) / (i+1)
-        F += prob
-        i += 1
-    return i
-
 def sim_frecuencias():
     acum, p_acum = 0, 0
     frecuencias = []
     for i in range(k-1):
-        B = Binomial(n - acum, p[i] / (1 - p_acum))
+        B = binom.rvs(n - acum, p[i] / (1 - p_acum))
         p_acum += p[i]
         acum += B
         frecuencias.append(B)
