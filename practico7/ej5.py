@@ -22,8 +22,7 @@ def get_sample():
 
 
 group_indices = [
-    [0, 1],
-    [2],
+    [0, 1, 2], 
     [3],
     [4],
     [5],
