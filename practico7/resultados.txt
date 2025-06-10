@@ -36,8 +36,8 @@ p-valor con uniformes ~ 0.1826
 p-valor con exponenciales ~ 0.0698
 
 ***** Ejercicio 10 *****
-p-valor con uniformes ~ 0.0102
-p-valor con normales ~ 0.0091
+p-valor con uniformes ~ 0.6745
+p-valor con normales ~ 0.6701
 
 
 
