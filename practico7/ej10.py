@@ -1,4 +1,4 @@
-from math import exp
+from math import exp, sqrt
 from numpy.random import uniform
 from scipy.stats import norm
 
@@ -17,7 +17,7 @@ def mean(data):
 
 def std(data):
     m = mean(data)
-    return sum((v - m)**2 for v in data)/(n-1)
+    return sqrt(sum((v - m)**2 for v in data)/(n-1))
 
 m_estim = mean(datos)
 s_estim = std(datos)
