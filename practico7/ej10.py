@@ -21,7 +21,7 @@ def std(data):
 
 m_estim = mean(datos)
 s_estim = std(datos)
-d_KS = estadistico(datos, lambda x : norm.cdf(x, m_estim, s_estim))
+d_KS = estadistico(datos, lambda x : norm.cdf(x, loc=m_estim, scale=s_estim))
 
 def simUniformes(Niter):
     pvalor = 0
@@ -39,12 +39,12 @@ def simNormales(Niter):
     pvalor = 0
 
     for _ in range(Niter):
-        norms = list(norm.rvs(m_estim, s_estim, size=n))
+        norms = list(norm.rvs(loc=m_estim, scale=s_estim, size=n))
         norms.sort()
 
-        m_sim = mean(datos)
-        s_sim = std(datos)
-        F_sim = lambda x: norm.cdf(x, m_sim, s_sim)
+        m_sim = mean(norms)
+        s_sim = std(norms)
+        F_sim = lambda x: norm.cdf(x, loc=m_sim, scale=s_sim)
 
         if estadistico(norms, F_sim) >= d_KS:
             pvalor += 1
