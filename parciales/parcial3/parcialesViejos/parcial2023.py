@@ -40,23 +40,13 @@ print(f"chi2 ~ {pvalor_chi:.5f}, por lo tanto se rechaza la hipótesis nula")
 
 from numpy.random import uniform
 
-def sim2(N):
-
-    p = 0
-    for _ in range(N):
-        x = -2 + 4*uniform()
-        y = -1 + 2*uniform()
-
-        if (x/2)**2 + y**2 <= 1:
-            p += 1
-
-    return p/N
-
-
 def bernoulli():
     x = -2 + 4*uniform()
     y = -1 + 2*uniform()
     return (x/2)**2 + y**2 <= 1
+
+def sim2(N):
+    return sum(bernoulli() for _ in range(N))/N
 
 z = norm.ppf(1 - 0.025)
 def sim_intevalo():
@@ -70,5 +60,6 @@ def sim_intevalo():
 
 
 N2 = 10000
-print(f"proporcion: {sim2(N2)}")
+print("***** Ejercicio 4 *****")
+print(f"proporcion simulada: {sim2(N2)}")
 print(f"proporcion con 95% de confianza: {sim_intevalo():.5f}")
