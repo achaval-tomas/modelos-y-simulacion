@@ -1,4 +1,4 @@
-from math import exp, sqrt
+from math import sqrt
 from numpy.random import uniform
 from scipy.stats import norm
 
