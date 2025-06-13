@@ -1,5 +1,6 @@
 # Generadores de numeros aleatorios
 
+
 def LCG(seed):
     """
     Generador congruencial lineal
@@ -15,7 +16,7 @@ def LCG(seed):
 
 def XORShift(seed):
     """
-    Generador XORShift de 32 bits   
+    Generador XORShift de 32 bits
     """
     value = seed
     mask_32b = 0xFFFFFFFF
@@ -36,7 +37,7 @@ def Xoshiro(seed):
     s = seed
 
     def rotl(x, k):
-        ''' Rotación a izquierda de 32 bits '''
+        """Rotación a izquierda de 32 bits"""
         return ((x << k) & mask_32b) | (x >> (32 - k))
 
     while True:
