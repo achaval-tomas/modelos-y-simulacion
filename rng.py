@@ -25,3 +25,31 @@ def XORShift(seed):
         value = (value ^ (value >> 17)) & mask_32b
         value = (value ^ (value << 5)) & mask_32b
         yield value
+
+
+def Xoshiro(seed):
+    """
+    Generador xoshiro128**
+    """
+    mask_32b = 0xFFFFFFFF
+
+    s = seed
+
+    def rotl(x, k):
+        ''' Rotación a izquierda de 16 bits '''
+        return ((x << k) & mask_32b) | (x >> (32 - k))
+
+    while True:
+        result = rotl(s[1] * 5, 7) * 9
+
+        t = (s[1] << 9) & mask_32b
+
+        s[2] ^= s[0]
+        s[3] ^= s[1]
+        s[1] ^= s[2]
+        s[0] ^= s[3]
+
+        s[2] ^= t
+        s[3] = rotl(s[3], 11)
+
+        yield result
