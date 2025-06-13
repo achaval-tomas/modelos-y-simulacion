@@ -36,7 +36,7 @@ def Xoshiro(seed):
     s = seed
 
     def rotl(x, k):
-        ''' Rotación a izquierda de 16 bits '''
+        ''' Rotación a izquierda de 32 bits '''
         return ((x << k) & mask_32b) | (x >> (32 - k))
 
     while True:
