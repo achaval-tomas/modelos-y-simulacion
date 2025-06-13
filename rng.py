@@ -31,17 +31,20 @@ def XORShift(seed):
 def Xoshiro(seed):
     """
     Generador xoshiro128**
+    Basado en: https://xoshiro.di.unimi.it/xoshiro128starstar.c
     """
     mask_32b = 0xFFFFFFFF
 
-    s = seed
+    # Generar los 4 estados a partir de la seed, utilizando XORShift.
+    s_gen = XORShift(seed)
+    s = [next(s_gen) for _ in range(4)]
 
     def rotl(x, k):
         """Rotación a izquierda de 32 bits"""
         return ((x << k) & mask_32b) | (x >> (32 - k))
 
     while True:
-        result = rotl(s[1] * 5, 7) * 9
+        result = (rotl(s[1] * 5, 7) * 9) & mask_32b
 
         t = (s[1] << 9) & mask_32b
 
