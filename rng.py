@@ -1,4 +1,4 @@
-# Generadores de numeros aleatorios
+# Generadores de numeros aleatorios adaptados a punto flotante en (0, 1)
 
 
 def LCG(seed):
@@ -11,10 +11,10 @@ def LCG(seed):
 
     while True:
         value = (a * value) % m
-        yield value
+        yield value / m
 
 
-def XORShift(seed):
+def XORShift_int(seed):
     """
     Generador XORShift de 32 bits
     """
@@ -28,6 +28,12 @@ def XORShift(seed):
         yield value
 
 
+def XORShift(seed):
+    gen = XORShift_int(seed)
+    while True:
+        yield next(gen) / (2**32)
+
+
 def Xoshiro(seed):
     """
     Generador xoshiro128**
@@ -36,7 +42,7 @@ def Xoshiro(seed):
     mask_32b = 0xFFFFFFFF
 
     # Generar los 4 estados a partir de la seed, utilizando XORShift.
-    s_gen = XORShift(seed)
+    s_gen = XORShift_int(seed)
     s = [next(s_gen) for _ in range(4)]
 
     def rotl(x, k):
@@ -56,4 +62,4 @@ def Xoshiro(seed):
         s[2] ^= t
         s[3] = rotl(s[3], 11)
 
-        yield result
+        yield result / 2**32
