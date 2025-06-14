@@ -37,7 +37,7 @@ def simExponenciales(Niter):
     pvalor = 0
 
     for _ in range(Niter):
-        expons = list(expon.rvs(lambda_estim, size=n))
+        expons = list(expon.rvs(scale=1/lambda_estim, size=n))
         expons.sort()
 
         lambda_sim = n/sum(expons)

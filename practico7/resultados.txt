@@ -32,8 +32,8 @@ Para 10000 simulaciones se obtuvieron los siguientes valores:
  1000 | 0.0730 | 0.00010
 
 ***** Ejercicio 9 *****
-p-valor con uniformes ~ 0.1826
-p-valor con exponenciales ~ 0.0698
+p-valor con uniformes ~ 0.1919
+p-valor con exponenciales ~ 0.0465
 
 ***** Ejercicio 10 *****
 p-valor con uniformes ~ 0.6687
