@@ -36,6 +36,7 @@ def test_generadores(seed, N=100):
         ("Xoshiro", Xoshiro(seed)),
     ]
 
+    print("Generador, d, N, ECM, Var, Tiempo")
     for name, gen in generators:
         for d in [2, 5, 10]:
             for nsim in [10**4, 10**5, 10**6]:
@@ -47,10 +48,7 @@ def test_generadores(seed, N=100):
                 ecm = calcular_ecm(exacto, data)
                 var = calcular_varianza_muestral(data)
 
-                print("-" * 80)
-                print(
-                    f"gen = {name}\td = {d}\tnsim = {nsim}\tECM = {ecm}\tVar = {var}\ttiempo = {elapsed:.4f}s"
-                )
+                print(name, d, nsim, ecm, var, elapsed, sep=", ")
 
 
 # gen = Xoshiro(random.randint(0, 2**32 - 1))
